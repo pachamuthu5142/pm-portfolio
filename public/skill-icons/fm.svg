@@ -1,0 +1,17 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3010_58)">
+<mask id="mask0_3010_58" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="50" y="50" width="400" height="400">
+<path d="M450 50H50V450H450V50Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_3010_58)">
+<path d="M450 50V250L350 350L250 450L150 350L250 250L450 50Z" fill="#59529D"/>
+<path d="M450 250V450L350 350L450 250Z" fill="#5271B4"/>
+<path d="M250 250L150 350L50 450V50L150 150L250 250Z" fill="#BB4B96"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_3010_58">
+<rect width="500" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>

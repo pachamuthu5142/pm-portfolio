@@ -1,0 +1,10 @@
+.service-card {
+  &:hover {
+    background: rgb(0, 171, 77);
+    background: url("/hero-bg.png");
+    background-size: cover;
+    background-position: center bottom; 
+    background-repeat: no-repeat;
+    transition: 0.5s;
+  }
+}
