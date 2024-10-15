@@ -22,7 +22,7 @@ export const SectionHeader = (
     return (
         <div ref={ref} className="section-header" style={{ transformStyle: 'preserve-3d', perspective: 2000 }}>
             <motion.div
-                className="section-header-title text-5xl font-bold text-white"
+                className="section-header-title w-[80%] text-5xl font-bold text-white"
                 style={{ opacity, rotateX, x }}
             >
                 {title}

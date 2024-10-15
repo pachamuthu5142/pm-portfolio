@@ -1,5 +1,7 @@
-import React from 'react'
+"use client";
+import React, { useRef } from 'react'
 import "./skill.scss"
+import { AnimatePresence, motion, useInView } from "framer-motion"
 const Skills = () => {
     const skills = [
         {
@@ -103,24 +105,60 @@ const Skills = () => {
             icon: "/skill-icons/wp.svg"
         }
     ]
+    const container = {
+        hidden: { opacity: 1 },
+        visible: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2
+            }
+
+        }
+    };
+
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        },
+    };
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
     return (
         <div>
-            <div className="skills-outer-container w-full py-[5rem]">
-                <div className="skills-inner-container w-[90%] mx-auto">
-                    <div className="skills-title text-5xl font-bold text-[#fff] text-center">
-                        Skills & Expertises
-                    </div>
-                    <div className="skills grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-16 my-8">
-                        {skills.map(skill => (
-                            <div key={skill.id} className="skill flex gap-2 items-center">
-                                <img src={skill.icon} alt={skill.name} className="w-11 h-11" />
-                                <div className="skill-name text-2xl text-[#808585] font-bold">{skill.name}</div>
-                            </div>
-                        ))}
+            <AnimatePresence>
+                <div className="skills-outer-container w-full py-[5rem]">
+                    <div className="skills-inner-container w-[90%] mx-auto">
+                        <div className="skills-title text-5xl font-bold text-[#fff] text-center">
+                            Skills & Expertises
+                        </div>
+                        <motion.div className="skills grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-16 my-8"
+                            ref={ref}
+                            variants={container}
+                            initial="hidden"
+                            animate={isInView ? "visible" : "hidden"}
+
+                        >
+                            {skills.map(skill => (
+                                <motion.div key={skill.id} className="skill"
+                                    variants={item}
+                                    exit={{ y: 20, opacity: 0 }}
+                                >
+                                    <motion.div className="skill-card  flex gap-2 items-center">
+                                        <img src={skill.icon} alt={skill.name} className="w-11 h-11" />
+                                        <div className="skill-name text-2xl text-[#808585] font-bold">{skill.name}</div>
+                                    </motion.div>
+                                </motion.div>
+                            ))}
+
+                        </motion.div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </AnimatePresence >
+        </div >
     )
 }
 
