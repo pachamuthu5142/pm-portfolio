@@ -38,7 +38,7 @@ const Projects = () => {
             id: 4,
             project: "WebChat",
             title: "WebChat: Integrating Modern Gen AI for Seamless Communication",
-            description: "Created a dynamic WebChat UI for my organization, which is a Gen AI-based company, enabling users to interact with modern generative AI. This WebChat serves as a communication channel, similar to WhatsApp, Instagram, and Facebook, and can be easily integrated into clients' websites. Handled the complete UI/UX design and development single-handedly, managing various functionalities and gaining valuable insights throughout the project.",
+            description: "Created a dynamic WebChat UI for my organization, which is a Gen AI-based company, enabling users to interact with modern generative AI. This WebChat serves as a communication channel, similar to WhatsApp, Instagram, and Facebook, and can be easily integrated into clients&apos; websites. Handled the complete UI/UX design and development single-handedly, managing various functionalities and gaining valuable insights throughout the project.",
             image: "/projects/webchat.jpg",
             image1: "/projects/webchat-wbg.png",
             projectLink: "#"
@@ -46,7 +46,7 @@ const Projects = () => {
             id: 5,
             project: "Website",
             title: "Streamlined Website for Logistics Client",
-            description: "Developed a website for a logistics-based client, managing the entire process from UI/UX design to front-end development and deployment. Handled all aspects single-handedly, creating an intuitive and efficient online presence that effectively showcases the client's services and capabilities. This project highlights my ability to deliver cohesive and engaging web solutions tailored to specific industry needs.",
+            description: "Developed a website for a logistics-based client, managing the entire process from UI/UX design to front-end development and deployment. Handled all aspects single-handedly, creating an intuitive and efficient online presence that effectively showcases the client&apos;s services and capabilities. This project highlights my ability to deliver cohesive and engaging web solutions tailored to specific industry needs.",
             image: "/projects/logistics-website.jpg",
             image1: "/projects/logistics-website-wbg.png",
             projectLink: "#"
@@ -131,14 +131,14 @@ const Projects = () => {
                                         {project.description}
                                     </p>
                                     <Link
-                                        className="text-[20px] flex items-center gap-2 font-bold"
-                                        href={project.projectLink || "/"}
-                                        passHref
+                                        href={project.projectLink}
+                                        target="_blank"
+                                        className="project-link text-[#00ab4d] text-[20px] flex items-center gap-2"
                                     >
-                                        <span> View Project </span> <MoveRight />
+                                        View Project
+                                        <MoveRight size={20} />
                                     </Link>
                                 </div>
-                                <img src={project.image1} alt={project.title} className="absolute w-[60%] top-[-10%] right-[-15%] -z-50 opacity-5" />
                             </motion.div>
                         );
                     })}

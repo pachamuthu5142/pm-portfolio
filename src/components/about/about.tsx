@@ -35,7 +35,7 @@ const About = () => {
                     )}
                     {isInView && (
                         <motion.div initial={{ opacity: 0, y: -40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: .8 }} className="about-content text-white w-[80%] mx-auto my-[3rem]">
-                            Welcome to my portfolio! I'm Pachamuthu, a dedicated and creative web designer and developer from India. With 2 years of experience in the industry, I specialize in building visually appealing and user-friendly websites that deliver outstanding user experiences.
+                            Welcome to my portfolio! I&apos;m Pachamuthu, a dedicated and creative web designer and developer from India. With 2 years of experience in the industry, I specialize in building visually appealing and user-friendly websites that deliver outstanding user experiences.
                         </motion.div>
                     )}
                     <div className="about-marquee">
