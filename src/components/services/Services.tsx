@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, } from 'framer-motion';
 import "./services.scss";
 import { SectionHeader } from '../section-header/SectionHeader';
 

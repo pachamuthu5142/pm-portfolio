@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { SectionHeader } from "../section-header/SectionHeader";
 import Link from "next/link";
-import { motion, useInView, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import "./projects.scss";
 
@@ -93,8 +93,6 @@ const Projects = () => {
                 >
                     {project.map((project) => {
                         const ref = useRef(null);
-                        const isInView = useInView(ref, { once: true });
-
                         const { scrollYProgress } = useScroll({
                             target: ref,
                             offset: ["start end", "center start"],

@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion} from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeader2 } from '../section-header/SectionHeader';
