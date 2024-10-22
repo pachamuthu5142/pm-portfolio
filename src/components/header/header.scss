@@ -1,4 +1,5 @@
 .nav-menu {
+  backdrop-filter: blur(40px);
   ul li {
     padding: 20px 30px;
     display: inline-block;
@@ -9,18 +10,29 @@
     border-radius: 20px;
     &:hover {
       background: rgb(0, 171, 77);
-      background: linear-gradient(
-        8deg,
-        rgba(0, 171, 77, 0.3) 0%,
-        rgba(0, 0, 0, 0.3) 56%,
-        rgba(0, 0, 0, 0.3) 63%,
-        rgba(0, 0, 0, 0.3) 100%,
-        rgba(0, 171, 77, 0.3) 100%
-      );
+      background: url("/hero-bg.png");
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
       transition: 0.5s;
       padding-top: 35px;
       padding-left: 45px;
       padding-bottom: 35px;
     }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    width: 100px;
+  }
+  .nav-menu-button-line {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    margin: 5px;
   }
 }

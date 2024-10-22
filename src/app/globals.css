@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Archivo", sans-serif;
+  box-sizing: border-box;
 }
 
 @layer utilities {
@@ -31,3 +32,4 @@ body {
   background-size: cover;
   height: 1000px;
 }
+

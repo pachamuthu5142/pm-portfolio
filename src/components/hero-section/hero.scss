@@ -1,14 +1,45 @@
-.hero-section-heading::before {
+.hero-section-heading::before,
+.hero-section-heading::after {
   content: "";
   display: block;
   width: 20px;
   height: 3px;
   background: linear-gradient(90deg, #ffffff, #000000);
 }
+
 .hero-section-heading::after {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 3px;
   background: linear-gradient(90deg, #000, #fff);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .hero-section-container {
+    height: 500px;
+    & img {
+      bottom: 0;
+    }
+  }
+  .header-and-herosection {
+    height: 600px;
+  }
+  .hero-section-subheading {
+    font-size: 40px;
+  }
+  .hero-section-heading-container {
+    padding: 5px 10px;
+  }
+  .hero-section-heading {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .hero-section-slill {
+    font-size: 10px;
+    gap: 7px;
+    &-container {
+      display: flex;
+      gap: 1rem;
+    }
+  }
 }

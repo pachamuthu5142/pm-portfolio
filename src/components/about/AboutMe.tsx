@@ -17,8 +17,8 @@ const AboutMe = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        <div className="about-me-content w-full text-[22px] text-[#d0d0d0]">
-                            <div className='w-[90%] flex flex-col gap-4'>
+                        <div className="about-me-content-container w-full text-[22px] text-[#d0d0d0]">
+                            <div className='about-me-content w-[90%] flex flex-col gap-4'>
                                 <p>
                                     Welcome to my portfolio! I'm Pachamuthu Moorthy, a passionate and innovative web designer and developer based in Salem, Tamil Nadu. With 2 years of experience in the industry, I specialize in creating visually engaging and highly functional websites that deliver exceptional user experiences.
                                 </p>

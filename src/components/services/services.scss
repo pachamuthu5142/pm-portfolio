@@ -3,8 +3,27 @@
     background: rgb(0, 171, 77);
     background: url("/hero-bg.png");
     background-size: cover;
-    background-position: center bottom; 
+    background-position: center bottom;
     background-repeat: no-repeat;
     transition: 0.5s;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .services-outer-container {
+    padding: 2rem 0;
+  }
+  .service-title {
+    font-size: 20px;
+  }
+  .service-card {
+    padding: 2rem;
+  }
+  .services {
+    gap: 2rem;
+    margin: 2rem auto;
   }
 }

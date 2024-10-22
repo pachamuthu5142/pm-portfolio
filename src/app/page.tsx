@@ -1,5 +1,6 @@
 import About from "@/components/about/about";
 import AboutMe from "@/components/about/AboutMe";
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import HeroSection from "@/components/hero-section/HeroSection";
 import Projects from "@/components/projects/Projects";
@@ -16,6 +17,7 @@ export default function Home() {
       <AboutMe />
       <Skills />
       <Projects />
+      <Footer />
     </div>
   </>
   );

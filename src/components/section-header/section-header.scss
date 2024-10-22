@@ -1,0 +1,18 @@
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .hero-section-heading {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .section-header-title {
+    font-size: 40px;
+    width: 100%;
+  }
+  .section-header-title-1 {
+    font-size: 28px;
+    line-height: 2.3rem;
+    width: 100%;
+  }
+}

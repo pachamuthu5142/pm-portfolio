@@ -80,7 +80,7 @@ const HeroSection = () => {
 
     return (
         <motion.div className="hero-section-container w-full h-[950px] flex flex-col items-center mt-[4rem]" style={{ opacity }}>
-            <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.7 }} className=" text-white text-xl bg-[#171717] text-[#d0d0d0] p-4 rounded-full tracking-[7px]">
+            <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.7 }} className="hero-section-heading-container text-white text-xl bg-[#171717] text-[#d0d0d0] p-4 rounded-full tracking-[7px]">
                 <div className='hero-section-heading flex gap-4 items-center'>Welcome to My Portfolio </div>
             </motion.div>
             <div className="hero-section-subheading text-white text-[240px] tracking-[7px] font-bold">
@@ -108,11 +108,11 @@ const HeroSection = () => {
                     ))}
                 </motion.div>
             </div>
-            <div className='flex justify-between w-[90%] text-[#d0d0d0] text-2xl'>
+            <div className='hero-section-slill-container flex justify-between w-[90%] text-[#d0d0d0] text-2xl'>
                 <motion.div variants={container}
                     initial="hidden"
                     animate="visible"
-                    className='flex gap-12'
+                    className='hero-section-slill flex gap-12'
                 >
                     <motion.p variants={itemleft}>#UI/UX Design</motion.p>
                     <motion.p variants={itemleft}>#Development</motion.p>
@@ -120,7 +120,7 @@ const HeroSection = () => {
                 <motion.div variants={container}
                     initial="hidden"
                     animate="visible"
-                    className='flex gap-12'
+                    className='hero-section-slill flex gap-12'
                 >
                     <motion.p variants={itemright}>#Graphic Design</motion.p>
                     <motion.p variants={itemright}>#Animation</motion.p>

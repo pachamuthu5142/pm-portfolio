@@ -4,7 +4,7 @@ import { SectionHeader } from "../section-header/SectionHeader";
 import Link from "next/link";
 import { motion, useInView, useTransform, useScroll } from "framer-motion";
 import { MoveRight } from "lucide-react";
-import { image } from "framer-motion/client";
+import "./projects.scss";
 
 const Projects = () => {
     const project = [

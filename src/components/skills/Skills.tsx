@@ -26,17 +26,17 @@ const Skills = () => {
         },
         {
             id: 5,
-            name: "Node Js",
+            name: "Node",
             icon: "/skill-icons/nodejs.svg"
         },
         {
             id: 6,
-            name: "Express Js",
+            name: "Express",
             icon: "/skill-icons/express.svg"
         },
         {
             id: 7,
-            name: "Next Js",
+            name: "Next",
             icon: "/skill-icons/nextjs.svg"
         },
         {
@@ -71,12 +71,12 @@ const Skills = () => {
         },
         {
             id: 14,
-            name: "Material UI",
+            name: "MUI",
             icon: "/skill-icons/mui.svg"
         },
         {
             id: 15,
-            name: "Ant Design",
+            name: "AntD",
             icon: "/skill-icons/antd.svg"
         },
         {
@@ -96,7 +96,7 @@ const Skills = () => {
         },
         {
             id: 19,
-            name: "Framer Motion",
+            name: "Framer",
             icon: "/skill-icons/fm.svg"
         },
         {

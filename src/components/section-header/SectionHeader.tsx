@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-
+import "./section-header.scss";
 export const SectionHeader = (
     { title, mainTitle }: { title: string, mainTitle: string }
 ) => {
@@ -22,7 +22,7 @@ export const SectionHeader = (
     return (
         <div ref={ref} className="section-header" style={{ transformStyle: 'preserve-3d', perspective: 2000 }}>
             <motion.div
-                className="section-header-title w-[80%] text-5xl font-bold text-white"
+                className="section-header-title-1 w-[80%] text-5xl font-bold text-white"
                 style={{ opacity, rotateX, x }}
             >
                 {title}
