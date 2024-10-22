@@ -6,7 +6,23 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import "./projects.scss";
 
+const useProjectScrollAnimation = (ref: React.MutableRefObject<null>) => {
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "center start"],
+    });
+
+    const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
+    const rotateX = useTransform(scrollYProgress, [0, 0.6], [100, 0]);
+    const rotate = useTransform(scrollYProgress, [0, 0.6], [-20, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.6], [0.8, 1]);
+
+    return { opacity, rotateX, rotate, scale };
+};
+
 const Projects = () => {
+    const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
     const project = [
         {
             id: 1,
@@ -61,7 +77,7 @@ const Projects = () => {
             projectLink: "#"
         }
 
-    ]
+    ];
 
     const container = {
         hidden: { opacity: 1 },
@@ -91,17 +107,10 @@ const Projects = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    {project.map((project) => {
+                    {project.map((project, index) => {
                         const ref = useRef(null);
-                        const { scrollYProgress } = useScroll({
-                            target: ref,
-                            offset: ["start end", "center start"],
-                        });
-
-                        const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
-                        const rotateX = useTransform(scrollYProgress, [0, 0.6], [100, 0]);
-                        const rotate = useTransform(scrollYProgress, [0, 0.6], [-20, 0]);
-                        const scale = useTransform(scrollYProgress, [0, 0.6], [0.8, 1]);
+                        projectRefs.current[index] = ref.current;
+                        const { opacity, rotateX, rotate, scale } = useProjectScrollAnimation(ref);
 
                         return (
                             <motion.div
