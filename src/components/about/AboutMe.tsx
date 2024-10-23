@@ -1,10 +1,11 @@
 "use client";
 import React, { useRef } from 'react';
-import { AnimatePresence, motion} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeader2 } from '../section-header/SectionHeader';
 import "../about/about.scss"
+import Image from 'next/image';
 const AboutMe = () => {
     const ref = useRef(null);
 
@@ -30,7 +31,7 @@ const AboutMe = () => {
                                     whileHover={{ color: '#00ab4d', transition: { duration: 0.3 } }}
                                 >
                                     <motion.div whileHover={{ y: -1, transition: { duration: 0.3 } }} className="flex gap-2 items-center">
-                                        <Link href={"https://www.linkedin.com/in/pachamuthu-moorthy-1b3a63218/"}  target='blank'> More About Me</Link>
+                                        <Link href={"https://www.linkedin.com/in/pachamuthu-moorthy-1b3a63218/"} target='blank'> More About Me</Link>
                                         <motion.div whileHover={{ y: -5, transition: { duration: 0.3 } }}>
                                             <ArrowUpRight color='#00ab4d' size={30} />
                                         </motion.div>
@@ -41,7 +42,7 @@ const AboutMe = () => {
                             </div>
                         </div>
                         <div className="about-me-image w-[60%]">
-                            <img src="/thala.png" alt="" />
+                            <Image src="/thala.png" alt="" width={500} height={500} />
                         </div>
                     </motion.div>
                 </AnimatePresence>
