@@ -6,23 +6,80 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import "./projects.scss";
 
-const useProjectScrollAnimation = (ref: React.MutableRefObject<null>) => {
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "center start"],
-    });
+const useProjectScrollAnimation = (ref: React.RefObject<HTMLElement>) => {
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center start"],
+  });
 
-    const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
-    const rotateX = useTransform(scrollYProgress, [0, 0.6], [100, 0]);
-    const rotate = useTransform(scrollYProgress, [0, 0.6], [-20, 0]);
-    const scale = useTransform(scrollYProgress, [0, 0.6], [0.8, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
+  const rotateX = useTransform(scrollYProgress, [0, 0.6], [100, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 0.6], [-20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.6], [0.8, 1]);
 
-    return { opacity, rotateX, rotate, scale };
+  return { opacity, rotateX, rotate, scale };
+};
+
+interface Project {
+  id: number;
+  project: string;
+  title: string;
+  description: string;
+  image: string;
+  image1: string;
+  projectLink: string;
+}
+
+const ProjectCard = ({ project }: { project: Project }) => {
+  const ref = useRef(null);
+  const { opacity, rotateX, rotate, scale } = useProjectScrollAnimation(ref);
+
+  const item = {
+    hidden: { opacity: 0, y: 120 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      key={project.id}
+      ref={ref}
+      className="project-card flex my-16 bg-[#181818] gap-12 p-14 rounded-[25px] relative overflow-hidden"
+      style={{ opacity, rotateX, rotate, scale }}
+      variants={item}
+    >
+      <div className="project-card-image w-full h-[500px] overflow-hidden rounded-[25px] ">
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          whileHover={{ scale: 1.07, rotate: -2 }}
+          transition={{ duration: 0.3 }}
+          className="w-full h-full object-cover rounded-[25px]"
+        />
+      </div>
+      <div className="project-card-content flex flex-col gap-8 w-full text-[#fff] m-auto ">
+        <div className="project text-[#a3a3a3] text-[24px]">
+          {project.project}
+        </div>
+        <h2 className="project-card-title text-[32px] leading-[2.5rem] font-semibold">
+          {project.title}
+        </h2>
+        <p className="project-card-description text-[#d0d0d0] text-[20px]">
+          {project.description}
+        </p>
+        <Link
+          href={project.projectLink}
+          target="_blank"
+          className="project-link text-[#00ab4d] text-[20px] flex items-center gap-2"
+        >
+          View Project
+          <MoveRight size={20} />
+        </Link>
+      </div>
+    </motion.div>
+  );
 };
 
 const Projects = () => {
-    const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-
     const project = [
         {
             id: 1,
@@ -79,82 +136,36 @@ const Projects = () => {
 
     ];
 
-    const container = {
-        hidden: { opacity: 1 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
-    const item = {
-        hidden: { opacity: 0, y: 120 },
-        visible: { opacity: 1, y: 0 },
-    };
-
-    return (
-        <div className="projects-outer-container w-full py-[5rem]">
-            <div className="project-inner-container w-[90%] m-auto">
-                <SectionHeader
-                    title="Innovative Solutions Through Design and Development"
-                    mainTitle="Projects"
-                />
-                <motion.div
-                    className="projects-container"
-                    variants={container}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {project.map((project, index) => {
-                        const ref = useRef(null);
-                        projectRefs.current[index] = ref.current;
-                        const { opacity, rotateX, rotate, scale } = useProjectScrollAnimation(ref);
-
-                        return (
-                            <motion.div
-                                key={project.id}
-                                ref={ref}
-                                className="project-card flex my-16 bg-[#181818] gap-12 p-14 rounded-[25px] relative overflow-hidden"
-                                style={{ opacity, rotateX, rotate, scale }}
-                                variants={item}
-                            >
-                                <div className="project-card-image w-full h-[500px] overflow-hidden rounded-[25px] ">
-                                    <motion.img
-                                        src={project.image}
-                                        alt={project.title}
-                                        whileHover={{ scale: 1.07, rotate: -2 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="w-full h-full object-cover rounded-[25px]"
-                                    />
-                                </div>
-                                <div className="project-card-content flex flex-col gap-8 w-full text-[#fff] m-auto ">
-                                    <div className="project text-[#a3a3a3] text-[24px]">
-                                        {project.project}
-                                    </div>
-                                    <h2 className="project-card-title text-[32px] leading-[2.5rem] font-semibold">
-                                        {project.title}
-                                    </h2>
-                                    <p className="project-card-description text-[#d0d0d0] text-[20px]">
-                                        {project.description}
-                                    </p>
-                                    <Link
-                                        href={project.projectLink}
-                                        target="_blank"
-                                        className="project-link text-[#00ab4d] text-[20px] flex items-center gap-2"
-                                    >
-                                        View Project
-                                        <MoveRight size={20} />
-                                    </Link>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="projects-outer-container w-full py-[5rem]">
+      <div className="project-inner-container w-[90%] m-auto">
+        <SectionHeader
+          title="Innovative Solutions Through Design and Development"
+          mainTitle="Projects"
+        />
+        <motion.div
+          className="projects-container"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {project.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 export default Projects;
