@@ -2,6 +2,7 @@
 import React, { useRef } from 'react'
 import "./skill.scss"
 import { AnimatePresence, motion, useInView } from "framer-motion"
+import Image from 'next/image';
 const Skills = () => {
     const skills = [
         {
@@ -148,7 +149,7 @@ const Skills = () => {
                                     exit={{ y: 20, opacity: 0 }}
                                 >
                                     <motion.div className="skill-card  flex gap-2 items-center">
-                                        <img src={skill.icon} alt={skill.name} className="w-11 h-11" />
+                                        <Image src={skill.icon} alt={skill.name} width={50} height={50} />
                                         <div className="skill-name text-2xl text-[#808585] font-bold">{skill.name}</div>
                                     </motion.div>
                                 </motion.div>
