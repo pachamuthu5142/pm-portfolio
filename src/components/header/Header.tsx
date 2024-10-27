@@ -53,7 +53,7 @@ const Header = () => {
                 <motion.li initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: .6, duration: .5 }}><a href="#projects">Projects</a></motion.li>
                 <motion.li initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: .8, duration: .5 }}><a href="#contact">Contact</a></motion.li>
+                  transition={{ delay: .8, duration: .5 }}><a href="https://wa.me/+916385828580">Contact</a></motion.li>
               </motion.ul>
             </motion.div>
           )}

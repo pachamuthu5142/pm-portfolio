@@ -79,7 +79,7 @@ const HeroSection = () => {
     };
 
     return (
-        <motion.div className="hero-section-container w-full h-[950px] flex flex-col items-center mt-[4rem]" style={{ opacity }}>
+        <motion.div className="hero-section-container w-full h-[950px] flex flex-col items-center mt-[4rem]" style={{ opacity }} id='home'>
             <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.7 }} className="hero-section-heading-container text-white text-xl bg-[#171717] text-[#d0d0d0] p-4 rounded-full tracking-[7px]">
                 <div className='hero-section-heading flex gap-4 items-center'>Welcome to My Portfolio </div>
             </motion.div>
@@ -126,7 +126,7 @@ const HeroSection = () => {
                     <motion.p variants={itemright}>#Animation</motion.p>
                 </motion.div>
             </div>
-            <motion.img className='absolute bottom-[-280px]' style={{ y: imageTranslateY }} initial={{ scale: 1.1, opacity: .8, y: 60 }} animate={{ scale: 1, opacity: 1, y: 0 }} transition={{ stiffness: 200, duration: .9 }} src="/thala.png" alt="" width={650} height={100} />
+            <motion.img className='absolute bottom-[-280px]' style={{ y: imageTranslateY }} initial={{ scale: 1.1, opacity: .8, y: 60 }} animate={{ scale: 1, opacity: 1, y: 0 }} transition={{ stiffness: 200, duration: .9 }} src="/Pm.png" alt="" width={650} height={100} />
         </motion.div>
     );
 }

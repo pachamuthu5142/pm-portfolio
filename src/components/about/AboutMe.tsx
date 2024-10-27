@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeader2 } from '../section-header/SectionHeader';
@@ -8,10 +8,15 @@ import "../about/about.scss"
 import Image from 'next/image';
 const AboutMe = () => {
     const ref = useRef(null);
-
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["end end", "end start"],
+      });
+    
+      const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
     return (
-        <div className="about-me-outer-container w-full py-[5rem]" ref={ref}>
-            <div className="about-me-inner-container w-[90%] mx-auto">
+        <div className="about-me-outer-container w-full py-[5rem]" ref={ref} id="about">
+            <motion.div className="about-me-inner-container w-[90%] mx-auto" ref={ref} style={{scale}}>
                 <SectionHeader2 title="Passionate Creator of Stunning User Interfaces" mainTitle="About me" />
                 <AnimatePresence>
                     <motion.div className="about-me flex justify-between items-center"
@@ -42,11 +47,11 @@ const AboutMe = () => {
                             </div>
                         </div>
                         <div className="about-me-image w-[60%]">
-                            <Image src="/thala.png" alt="" width={500} height={500} />
+                            <Image src="/Pm.png" alt="" width={500} height={500} />
                         </div>
                     </motion.div>
                 </AnimatePresence>
-            </div>
+            </motion.div>
         </div>
     );
 };

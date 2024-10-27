@@ -1,11 +1,13 @@
 "use client";
 import React, { useRef } from 'react';
-import { AnimatePresence, motion, } from 'framer-motion';
+import { AnimatePresence, motion, useInView, useScroll, useTransform, } from 'framer-motion';
 import "./services.scss";
 import { SectionHeader } from '../section-header/SectionHeader';
 
 const Services = () => {
     const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     const services = [
         { id: 1, title: "UI/UX Design" },
         { id: 2, title: "Frontend Development" },
@@ -19,30 +21,37 @@ const Services = () => {
         visible: {
             opacity: 1,
             transition: {
-                delayChildren: .5,
+                delayChildren: 0.2,
                 staggerChildren: 0.2,
-                duration: 1
-            }
-        }
+                type: "spring",
+                ease: "easeInOut",
+            },
+        },
     };
 
     const item = {
-        hidden: { y: 20, opacity: 0 },
+        hidden: { y: 50 },
         visible: {
             y: 0,
-            opacity: 1
-        }
+        },
     };
 
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["end end", "end start"],
+    });
+
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+
     return (
-        <div className="services-outer-container w-full py-[5rem]" ref={ref}>
+        <motion.div className="services-outer-container w-full py-[5rem]" ref={ref} style={{ scale }}>
             <div className="services-inner-container w-[90%] mx-auto">
                 <SectionHeader title="Transforming Ideas into Reality." mainTitle="Services" />
                 <AnimatePresence>
                     <motion.div className="services my-[5rem] flex flex-col gap-10"
                         variants={container}
                         initial="hidden"
-                        animate="visible"
+                        animate={isInView ? "visible" : "hidden"}
                     >
                         {services.map(service => (
                             <motion.div
@@ -70,8 +79,10 @@ const Services = () => {
                     </motion.div>
                 </AnimatePresence>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 export default Services;
+
+
