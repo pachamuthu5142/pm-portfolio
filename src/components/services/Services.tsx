@@ -6,7 +6,7 @@ import { SectionHeader } from '../section-header/SectionHeader';
 
 const Services = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    // const isInView = useInView(ref, { once: true });
 
     const services = [
         { id: 1, title: "UI/UX Design" },

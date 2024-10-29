@@ -132,7 +132,7 @@ const Skills = () => {
     };
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
+    // const isInView = useInView(ref, { once: false });
     return (
         <div>
             <AnimatePresence>

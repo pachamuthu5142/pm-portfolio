@@ -36,7 +36,7 @@ const AboutMe = () => {
                                     transition={{ duration: 1 }}
                                 >
 
-                                    Welcome to my portfolio! I'm Pachamuthu Moorthy, a software developer and designer based in Salem, Tamil Nadu, skilled in Next.js, React, Node.js, MongoDB, Figma for UI/UX, graphic design, and SEO, with 2 years of industry experience. I specialize in crafting complex web applications that combine robust functionality with visually engaging design, delivering seamless and user-centered digital experiences.
+                                    Welcome to my portfolio! I&aposm Pachamuthu Moorthy, a software developer and designer based in Salem, Tamil Nadu, skilled in Next.js, React, Node.js, MongoDB, Figma for UI/UX, graphic design, and SEO, with 2 years of industry experience. I specialize in crafting complex web applications that combine robust functionality with visually engaging design, delivering seamless and user-centered digital experiences.
                                 </motion.p>
                                 <motion.p ref={ref2}
                                     initial={{ opacity: 0, y: 50 }}
