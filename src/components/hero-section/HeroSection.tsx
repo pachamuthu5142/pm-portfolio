@@ -115,7 +115,7 @@ const HeroSection = () => {
                     className='hero-section-slill flex gap-12'
                 >
                     <motion.p variants={itemleft}>#UI/UX Design</motion.p>
-                    <motion.p variants={itemleft}>#Development</motion.p>
+                    <motion.p variants={itemleft}>#Full Stack Development</motion.p>
                 </motion.div>
                 <motion.div variants={container}
                     initial="hidden"
@@ -123,7 +123,7 @@ const HeroSection = () => {
                     className='hero-section-slill flex gap-12'
                 >
                     <motion.p variants={itemright}>#Graphic Design</motion.p>
-                    <motion.p variants={itemright}>#Animation</motion.p>
+                    <motion.p variants={itemright}>#Web Development</motion.p>
                 </motion.div>
             </div>
             <motion.img className='absolute bottom-[-280px]' style={{ y: imageTranslateY }} initial={{ scale: 1.1, opacity: .8, y: 60 }} animate={{ scale: 1, opacity: 1, y: 0 }} transition={{ stiffness: 200, duration: .9 }} src="/Pm.png" alt="" width={650} height={100} />

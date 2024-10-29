@@ -106,24 +106,29 @@ const Skills = () => {
             icon: "/skill-icons/wp.svg"
         }
     ]
-    const container = {
-        hidden: { opacity: 1 },
-        visible: {
-            opacity: 1,
-            transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.2
-            }
 
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.1
+            }
         }
     };
 
-    const item = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 20
         },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        }
     };
 
     const ref = useRef(null);
@@ -138,15 +143,16 @@ const Skills = () => {
                         </div>
                         <motion.div className="skills grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-16 my-8"
                             ref={ref}
-                            variants={container}
+                            variants={containerVariants}
                             initial="hidden"
-                            animate={isInView ? "visible" : "hidden"}
-
+                            whileInView="visible"
+                            viewport={{ once: false }}
                         >
                             {skills.map(skill => (
                                 <motion.div key={skill.id} className="skill"
-                                    variants={item}
+                                    variants={itemVariants}
                                     exit={{ y: 20, opacity: 0 }}
+
                                 >
                                     <motion.div className="skill-card  flex gap-2 items-center">
                                         <Image src={skill.icon} alt={skill.name} width={50} height={50} />

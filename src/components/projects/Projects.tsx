@@ -97,7 +97,7 @@ const Projects = () => {
       description: "Developed a dynamic demo centre to showcase enterprise and SaaS product demos for customers and partners. Managed end-to-end UI/UX design and development, integrating Azure App Insights for performance monitoring and diagnostics. Executed the project single-handedly, ensuring a cohesive user experience and smooth functionality across the platform.",
       image: "/projects/demo-center.jpg",
       image1: "/projects/demo-center-wbg.png",
-      projectLink: "https://inextlabs.ai/demo-centre"
+      projectLink: "https://demo.inextlabs.ai/"
     },
     {
       id: 3,
@@ -106,7 +106,7 @@ const Projects = () => {
       description: "Developed the complete UI/UX design and front-end for an AI Avatar Assistant used in events for a leading bank in Malaysia. Single-handedly crafted an engaging and intuitive interface, ensuring seamless interaction between users and the AI assistant. This project was a great success, leading to valuable insights and a deeper understanding of UI/UX development for AI-powered solutions.",
       image: "/projects/ai-avatar.jpg",
       image1: "/projects/ai-avatar-wbg.png",
-      projectLink: "#"
+      projectLink: "https://inextlabs.ai/"
     }, {
       id: 4,
       project: "WebChat",
@@ -114,7 +114,7 @@ const Projects = () => {
       description: "Created a dynamic WebChat UI for my organization, which is a Gen AI-based company, enabling users to interact with modern generative AI. This WebChat serves as a communication channel, similar to WhatsApp, Instagram, and Facebook, and can be easily integrated into clients&apos; websites. Handled the complete UI/UX design and development single-handedly, managing various functionalities and gaining valuable insights throughout the project.",
       image: "/projects/webchat.jpg",
       image1: "/projects/webchat-wbg.png",
-      projectLink: "#"
+      projectLink: "https://inextlabs.ai/"
     }, {
       id: 5,
       project: "Website",
@@ -122,7 +122,7 @@ const Projects = () => {
       description: "Developed a website for a logistics-based client, managing the entire process from UI/UX design to front-end development and deployment. Handled all aspects single-handedly, creating an intuitive and efficient online presence that effectively showcases the client&apos;s services and capabilities. This project highlights my ability to deliver cohesive and engaging web solutions tailored to specific industry needs.",
       image: "/projects/logistics-website.jpg",
       image1: "/projects/logistics-website-wbg.png",
-      projectLink: "#"
+      projectLink: "https://www.jsaborneo.com/"
     },
     {
       id: 6,
@@ -131,7 +131,7 @@ const Projects = () => {
       description: "Contributing to a web application portal designed for both internal use and client management. The portal features an analytics module, settings management, bot conversation capabilities, live agent support, contact management, and subscription settings. My contributions include enhancing user experience and functionality across various modules, ensuring a cohesive platform that meets user needs and optimizes operations.",
       image: "/projects/portal.jpg",
       image1: "/projects/portal-wbg.png",
-      projectLink: "#"
+      projectLink: "https://staging.inextlabs.ai/"
     }
 
   ];

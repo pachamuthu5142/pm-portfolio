@@ -16,26 +16,30 @@ const Services = () => {
         { id: 5, title: "Graphic Design" }
     ];
 
-    const container = {
-        hidden: { opacity: 1 },
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 60
+        },
         visible: {
             opacity: 1,
-            transition: {
-                delayChildren: 0.2,
-                staggerChildren: 0.2,
-                type: "spring",
-                ease: "easeInOut",
-            },
-        },
-    };
-
-    const item = {
-        hidden: { y: 50 },
-        visible: {
             y: 0,
-        },
+            transition: {
+                duration: 0.5,
+                ease: "easeOut"
+            }
+        }
     };
-
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["end end", "end start"],
@@ -49,15 +53,16 @@ const Services = () => {
                 <SectionHeader title="Transforming Ideas into Reality." mainTitle="Services" />
                 <AnimatePresence>
                     <motion.div className="services my-[5rem] flex flex-col gap-10"
-                        variants={container}
+                        variants={containerVariants}
                         initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
+                        whileInView="visible"
+                        viewport={{ once: false }}
                     >
                         {services.map(service => (
                             <motion.div
                                 key={service.id}
                                 className="service-card w-[95%] m-auto text-[#d0d0d0] p-10 bg-[#181717] cursor-pointer rounded-[20px]"
-                                variants={item}
+                                variants={itemVariants}
                             >
                                 <motion.div
                                     whileHover={{
