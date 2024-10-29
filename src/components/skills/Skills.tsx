@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react'
 import "./skill.scss"
-import { AnimatePresence, motion, useInView } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import Image from 'next/image';
 const Skills = () => {
     const skills = [
