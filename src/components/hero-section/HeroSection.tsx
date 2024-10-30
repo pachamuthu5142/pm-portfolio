@@ -115,7 +115,7 @@ const HeroSection = () => {
                     className='hero-section-slill flex gap-12'
                 >
                     <motion.p variants={itemleft}>#UI/UX Design</motion.p>
-                    <motion.p variants={itemleft}>#Full Stack Development</motion.p>
+                    <motion.p variants={itemleft}>#Full Stack</motion.p>
                 </motion.div>
                 <motion.div variants={container}
                     initial="hidden"
