@@ -12,13 +12,13 @@ export default function Home() {
     <div className="header-and-herosection">
       <Header />
       <HeroSection />
-      <About />
-      <Services />
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Footer />
     </div>
+    <About />
+    <Services />
+    <AboutMe />
+    <Skills />
+    <Projects />
+    <Footer />
   </>
   );
 }
