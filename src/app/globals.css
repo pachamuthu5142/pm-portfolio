@@ -14,18 +14,12 @@
   }
 }
 
-html,
-body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  position: relative;
 }
 
 @layer utilities {
