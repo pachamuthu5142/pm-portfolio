@@ -83,7 +83,7 @@ const HeroSection = () => {
             <motion.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1, delay: 1.7 }} className="hero-section-heading-container text-white text-xl bg-[#171717] text-[#d0d0d0] p-4 rounded-full tracking-[7px]">
                 <div className='hero-section-heading flex gap-4 items-center'>Welcome to My Portfolio </div>
             </motion.div>
-            <div className="hero-section-subheading text-white text-[240px] tracking-[7px] font-bold">
+            <div className="hero-section-subheading text-white text-[220px] tracking-[7px] font-bold sm:text-[180px] sm:tracking-[5px] md:text-[200px] md:tracking-[6px] lg:text-[220px] lg:tracking-[7px]">
                 <motion.div
                     style={{
                         display: 'flex',

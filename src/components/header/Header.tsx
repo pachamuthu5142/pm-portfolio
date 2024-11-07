@@ -38,7 +38,7 @@ const Header = () => {
         <AnimatePresence>
           {isNavOpen && (
             <motion.div
-              className="nav-menu mt-4 w-full mx-auto bg-[#000a0b] rounded-lg overflow-hidden absolute z-10"
+              className="nav-menu mt-4 w-full mx-auto rounded-lg overflow-hidden absolute z-10"
               initial={{ opacity: 0, y: -20, height: 0 }}
               animate={{ opacity: 1, y: 0, height: 'auto' }}
               transition={{ duration: 1 }}
