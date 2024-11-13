@@ -65,7 +65,7 @@ const AboutMe = () => {
                             </div>
                         </div>
                         <div className="about-me-image w-[60%]">
-                            <Image src="/Pm.png" alt="" width={500} height={500} />
+                            <Image src="/pm.png" alt="" width={400} height={400} />
                         </div>
                     </motion.div>
                 </AnimatePresence>

@@ -122,7 +122,7 @@ const Projects = () => {
       description: "Developed a website for a logistics-based client, managing the entire process from UI/UX design to front-end development and deployment. Handled all aspects single-handedly, creating an intuitive and efficient online presence that effectively showcases the client&apos;s services and capabilities. This project highlights my ability to deliver cohesive and engaging web solutions tailored to specific industry needs.",
       image: "/projects/logistics-website.jpg",
       image1: "/projects/logistics-website-wbg.png",
-      projectLink: "https://www.jsaborneo.com/"
+      projectLink: "https://wa.me/+916385828580"
     },
     {
       id: 6,
