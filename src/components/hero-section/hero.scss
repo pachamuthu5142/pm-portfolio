@@ -11,7 +11,41 @@
   background: linear-gradient(90deg, #000, #fff);
 }
 
+@media (min-width: 769px) and (max-width: 1300px) {
+  .hero-section-subheading {
+    font-size: 170px;
+  }
+
+}
 @media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section-container {
+    height: 500px;
+    & img {
+      top: 150px;
+      width: 400px;
+    }
+  }
+  .header-and-herosection {
+    height: 600px;
+  }
+  .hero-section-subheading {
+    font-size: 120px;
+  }
+  .hero-section-heading-container {
+    padding: 5px 10px;
+  }
+  .hero-section-heading {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .hero-section-slill {
+    font-size: 15px;
+    gap: 7px;
+    &-container {
+      display: flex;
+      gap: 1rem;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -19,6 +53,7 @@
     height: 500px;
     & img {
       top: 150px;
+      width: 300px;
     }
   }
   .header-and-herosection {

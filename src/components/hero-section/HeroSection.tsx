@@ -126,7 +126,7 @@ const HeroSection = () => {
                     <motion.p variants={itemright}>#Web Development</motion.p>
                 </motion.div>
             </div>
-            <motion.img className='absolute bottom-[-250px]' style={{ y: imageTranslateY }} initial={{ scale: 1.1, opacity: .8, y: 60 }} animate={{ scale: 1, opacity: 1, y: 0 }} transition={{ stiffness: 200, duration: .9 }} src="/Pm.png" alt="" width={500} height={100} />
+            <motion.img className='absolute bottom-[-250px] hero-section-img' style={{ y: imageTranslateY }} initial={{ scale: 1.1, opacity: .8, y: 60 }} animate={{ scale: 1, opacity: 1, y: 0 }} transition={{ stiffness: 200, duration: .9 }} src="/Pm.png" alt="" width={500} height={100} />
         </motion.div>
     );
 }
