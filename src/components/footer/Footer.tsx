@@ -31,7 +31,7 @@ const Footer = () => {
                         </div>
                         <div className="copyrights w-[90%] mx-auto text-[#a3a3a3] text-[20px] mt-9 flex justify-between">
                             <p className="">
-                                © 2024 All rights reserved.
+                                © 2026 All rights reserved.
                             </p>
                             <p>
                                 Designed by Pachamuthu
